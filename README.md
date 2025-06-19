@@ -1,6 +1,6 @@
 # 💬 ChatApp - Node.js & Express
 
-A real-time chat application built with **Node.js**, **Express**, and **Socket.IO**. This lightweight chat app allows multiple users to join chat rooms and exchange messages instantly.
+A basic real-time chat application built with **Node.js**, **Express**, and **Socket.IO**. This lightweight chat app allows multiple users to join chat rooms and exchange messages instantly.
 
 ---
 
@@ -10,7 +10,7 @@ A real-time chat application built with **Node.js**, **Express**, and **Socket.I
 - Room-based chat functionality
 - Dynamic username and room joining
 - Auto-scroll for new messages
-- Simple and responsive UI using HTML & CSS
+- Simple and responsive UI using Tailwind CSS
 
 ---
 
@@ -18,7 +18,7 @@ A real-time chat application built with **Node.js**, **Express**, and **Socket.I
 
 - **Backend:** Node.js, Express.js
 - **Real-Time Engine:** Socket.IO
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS, JavaScript, Tailwindcss
 
 ---
 
@@ -27,17 +27,12 @@ A real-time chat application built with **Node.js**, **Express**, and **Socket.I
 ```
 ChatApp---Node-Express/
 │
-├── public/               # Static files served to the client
-│   ├── css/
-│   ├── js/
+├── public/               # Static files served to the client          
 │   └── index.html        # Main frontend file
-│
-├── utils/                # Utility modules
-│   ├── messages.js
-│   └── users.js
-│
+│   └── main.js           # Client-side JavaScript for handling chat functionality
+│               
 ├── .gitignore
-├── index.js              # Main server file
+├── app.js              # Main server file
 └── package.json
 ```
 
@@ -58,7 +53,7 @@ ChatApp---Node-Express/
 
 3. **Start the server**
    ```bash
-   node index.js
+   npm run dev # this will run the server using nodemon
    ```
 
 4. **Open in browser**
@@ -66,31 +61,10 @@ ChatApp---Node-Express/
    http://localhost:3000
    ```
 
----
 
-## 🌐 Deployment Guide
-
-### 🔹 Deploy to Shared Hosting (cPanel)
-
-> Shared hosting typically does **not support Node.js** natively. You need a VPS or a specialized Node hosting provider. If shared hosting supports Node, follow their Node.js app setup.
-
-### 🔹 Deploy to [Netlify](https://www.netlify.com/)
-
-Netlify only supports static frontend hosting. You must:
-
-1. Host backend (Node.js) on [Render](https://render.com), [Railway](https://railway.app), [Heroku](https://www.heroku.com) or [Vercel](https://vercel.com) (for serverless).
-2. Deploy only the `public/` folder to Netlify as static frontend.
-3. Update the WebSocket URL in `public/js/chat.js` to point to the backend server.
-
----
 
 ## ✍️ Author
 
 **Md: Emon Ahmed**  
 [GitHub Profile](https://github.com/coderemon24)
 
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
