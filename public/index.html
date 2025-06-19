@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root" class="bg-gray-100">
+    <div class="flex h-screen w-screen items-center justify-center flex-col">
+      <div class="w-80 rounded-lg bg-white shadow-lg">
+        <!-- Chat Header -->
+        <div class="relative flex w-full items-center justify-between px-3 py-2">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z..." />
+            </svg>
+            <div class="font-semibold">TARS Chat</div>
+          </div>
+        </div>
+
+        <!-- Chat messages (Fixed height, scrollable) -->
+        <ul id="chatList" class="border-t border-gray-200 p-3 space-y-2 h-60 overflow-y-auto">
+          <!-- Messages will be appended here -->
+        </ul>
+
+        <!-- Input -->
+        <div class="relative">
+          <form id="messageForm">
+            <input id="messageInput" type="text" placeholder="Reply"
+                   class="h-10 w-full rounded-b-lg border-t border-gray-200 bg-gray-100 pl-3 text-sm focus:outline-blue-600/50" />
+            <button type="submit"
+                    class="absolute top-0 right-1 bottom-0 my-auto size-fit cursor-pointer rounded-full p-2 text-blue-600 hover:bg-gray-200 focus:bg-gray-200">
+              <svg class="size-4" stroke="currentColor" stroke-width="1.5"
+                   viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"
+                      stroke-linejoin="round" stroke-linecap="round"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Client count -->
+      <div class="mt-8">
+        <h4 class="text-center text-sm text-gray-500">
+          Total Client Connected: <span id="clientCount">0</span>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
